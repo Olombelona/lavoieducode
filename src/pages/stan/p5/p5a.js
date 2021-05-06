@@ -10,6 +10,7 @@ function sketch(p) {
 
   p.setup = function () {
     p.createCanvas(p.windowWidth, 400, p.WEBGL)
+    p.colorMode(p.HSB, 1, 1, 1, 1)
 
     p.windowResized = () => {
       // p.resizeCanvas(p.windowWidth, p.windowHeight)
@@ -26,18 +27,9 @@ function sketch(p) {
   p.draw = function () {
     let x = p.mouseX - p.width / 2
     let y = p.mouseY - p.height / 2
-    // console.log('mouse', p.mouseX, p.mouseY)
-    // console.log('size', p.width, p.height)
-    // console.log('window', p.windowWidth, p.windowHeight)
-    p.background(p.frameCount % 255)
+    p.noCursor()
+    let hue = p.abs(p.sin(p.frameCount * 0.001))
+    p.background(hue, 1, 1)
     p.ellipse(x, y, 50, 50)
-
-    // p.background(100)
-    // p.normalMaterial()
-    // p.noStroke()
-    // p.push()
-    // p.rotateY(rotation)
-    // p.box(100)
-    // p.pop()
   }
 }
