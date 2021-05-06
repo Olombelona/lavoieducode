@@ -9,7 +9,12 @@ function sketch(p) {
   let rotation = 0
 
   p.setup = function () {
-    p.createCanvas(600, 400, p.WEBGL)
+    p.createCanvas(p.windowWidth, 400, p.WEBGL)
+
+    p.windowResized = () => {
+      // p.resizeCanvas(p.windowWidth, p.windowHeight)
+      p.resizeCanvas(p.windowWidth, 400)
+    }
   }
 
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {

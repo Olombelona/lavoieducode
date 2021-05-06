@@ -1,10 +1,15 @@
 import React from 'react'
+import { MenuLink } from '../menu_link'
 
-export function Menu_Dinh() {
+export function MenuDinh() {
   return (
     <div>
-      Dinh Doan Van Bien propose de très bon moufgazis à la Guinness
-      aujourd'hui. Profitez-en !
+      <MenuLink
+        link="/dinh/home"
+        name={
+          "Dinh Doan Van Bien propose de très bon moufgazis à la Guinness aujourd'hui. Profitez-en !"
+        }
+      ></MenuLink>
     </div>
   )
 }

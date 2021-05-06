@@ -1,12 +1,15 @@
 import React from 'react'
-import SketchP5A from './p5/p5a'
+import { MenuLink } from '../menu_link'
 
-export function Menu_Stan() {
+export function MenuStan() {
   return (
     <div>
-      Stanislas Marçais propose de très bonnes crèmes brûlées pas trop cramées
-      jusqu'à demain !
-      <SketchP5A />
+      <MenuLink
+        link="/stan/home"
+        name={
+          'Stanislas Marçais alias Knupel propose de jolis petit composants revenu sur un lit de variables accompagné de leur légumes flottants'
+        }
+      ></MenuLink>
     </div>
   )
 }
