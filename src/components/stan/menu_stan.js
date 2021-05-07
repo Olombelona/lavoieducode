@@ -7,8 +7,19 @@ export function MenuStan() {
       <MenuLink
         link="/stan/home"
         name={
-          'Stanislas Marçais alias Knupel propose de jolis petit composants revenu sur un lit de variables accompagné de leur légumes flottants'
+          'Stanislas Marçais proposent de découvrir la voie du code créatif, alors venez suivre la caravane'
         }
+      ></MenuLink>
+    </div>
+  )
+}
+
+export function MenuECV() {
+  return (
+    <div>
+      <MenuLink
+        link="/stan/ecv/ecv_aix_2020_2021"
+        name={'Atelier ECV-Digital Aix-en-Provence 2020-2021'}
       ></MenuLink>
     </div>
   )
