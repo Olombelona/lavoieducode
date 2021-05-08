@@ -10,7 +10,7 @@ export default function () {
       </div>
       <div style={{ position: 'absolute' }}>
         {/* <Layout title="ECV Aix-en-Provence 2020-2021" to="/stan/home"></Layout> */}
-        <Layout title="ECV Aix-en-Provence 2020-2021" to="/back"></Layout>
+        <Layout title="ECV Aix-en-Provence 2021 partie 1" to="/back"></Layout>
       </div>
     </div>
   );
@@ -19,11 +19,12 @@ export default function () {
 function sketch(p) {
   // createButton() // look if it's cool or not
   let pos;
+  let pos_ref;
   let size;
+  let size_ref;
   let rounded;
   let inside;
   let label;
-  let hue;
 
   p.setup = function () {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -40,10 +41,11 @@ function sketch(p) {
     let hue = p.abs(p.sin(p.frameCount * 0.001));
     p.background(hue, 1, 1);
     update_button();
+    mutation_button();
     show_button(hue);
   };
 
-  p.mousePressed = function () {
+  p.mouseReleased = function () {
     if (inside) {
       reset_button();
     }
@@ -52,19 +54,39 @@ function sketch(p) {
   // your functions
   function init_button() {
     size = p.createVector(p.height / 6, p.height / 6);
+    size_ref = size.copy();
     rounded = (p.random() * size.x) / 2;
     pos = p.createVector(p.random() * p.width, p.random() * p.height);
+    pos_ref = pos.copy();
     label = 'le bouton';
+  }
+
+  function mutation_button() {
+    if (inside) {
+      let ratio_x = p.abs(p.sin(p.frameCount * 0.01));
+      let ratio_y = p.abs(p.sin(p.frameCount * 0.005));
+      let val_x = (p.width / 3) * ratio_x;
+      let val_y = (p.height / 3) * ratio_y;
+
+      size.x = size_ref.x + val_x;
+      size.y = size_ref.y + val_y;
+      pos.x = pos_ref.x - val_x / 2;
+      pos.y = pos_ref.y - val_y / 2;
+      console.log('frameCount', p.frameCount);
+      console.log(size.y, '=', size_ref.x, '+', val_x, '*', ratio_x);
+    }
   }
 
   function reset_button() {
     let sx = p.random(p.height / 6, p.height / 3);
     let sy = p.random(p.height / 10, p.height / 6);
     size.set(sx, sy);
+    size_ref = size.copy();
     rounded = (p.random() * size.x) / 2;
     let px = p.random() * (p.width - size.x);
     let py = p.random() * (p.height - size.y);
     pos.set(px, py);
+    pos_ref = pos.copy();
   }
 
   function update_button() {
@@ -87,7 +109,7 @@ function sketch(p) {
     } else {
       p.fill(hue, 1, 1);
     }
-    p.textAlign(p.CENTER);
+    p.textAlign(p.CENTER, p.CENTER);
     let x = pos.x + size.x / 2;
     let y = pos.y + size.y / 2;
     p.text(label, x, y);
