@@ -1,8 +1,8 @@
-import React from 'react'
-import { Background } from './p5/p5_utils'
-import Layout from '../../components/layout'
-import { MenuECV } from '../../components/stan/menu_stan'
-import { ContainerTest } from '../../components/stan/container'
+import React from 'react';
+import { Background } from '../../components/stan/p5/p5_background';
+import Layout from '../../components/layout';
+import { MenuECV } from '../../components/stan/menu_stan';
+import { ContainerTest } from '../../components/stan/container';
 
 /**
  *  Work on eventListener to catch event to pass at Processing sketch
@@ -30,5 +30,5 @@ export default function Home() {
         <Layout title="La caravane du code"></Layout>
       </div>
     </div> */
-  )
+  );
 }

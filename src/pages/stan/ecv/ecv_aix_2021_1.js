@@ -1,6 +1,7 @@
 import React from 'react';
 import P5Wrapper from 'react-p5-wrapper';
 import Layout from '../../../components/layout';
+import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
 
 export default function () {
   return (
@@ -124,42 +125,42 @@ function sketch(p) {
   }
 }
 
-function inside_ellipse(cursor, pos, size) {
-  let x = cursor.x;
-  let y = cursor.y;
-  let px = pos.x;
-  let py = pos.y;
-  let sx = size.x;
-  let sy = size.y;
-  let bool_x = false;
-  if (x < px + sx / 2 && x > px - sx / 2) {
-    bool_x = true;
-  }
-  let bool_y = false;
-  if (y < py + sy / 2 && y > py - sy / 2) {
-    bool_y = true;
-  }
+// function inside_ellipse(cursor, pos, size) {
+//   let x = cursor.x;
+//   let y = cursor.y;
+//   let px = pos.x;
+//   let py = pos.y;
+//   let sx = size.x;
+//   let sy = size.y;
+//   let bool_x = false;
+//   if (x < px + sx / 2 && x > px - sx / 2) {
+//     bool_x = true;
+//   }
+//   let bool_y = false;
+//   if (y < py + sy / 2 && y > py - sy / 2) {
+//     bool_y = true;
+//   }
 
-  if (bool_x && bool_y) return true;
-  return false;
-}
+//   if (bool_x && bool_y) return true;
+//   return false;
+// }
 
-function inside_rect(cursor, pos, size) {
-  let x = cursor.x;
-  let y = cursor.y;
-  let px = pos.x;
-  let py = pos.y;
-  let sx = size.x;
-  let sy = size.y;
-  let bool_x = false;
-  if (x < px + sx && x > px) {
-    bool_x = true;
-  }
-  let bool_y = false;
-  if (y < py + sy && y > py - sy) {
-    bool_y = true;
-  }
+// function inside_rect(cursor, pos, size) {
+//   let x = cursor.x;
+//   let y = cursor.y;
+//   let px = pos.x;
+//   let py = pos.y;
+//   let sx = size.x;
+//   let sy = size.y;
+//   let bool_x = false;
+//   if (x < px + sx && x > px) {
+//     bool_x = true;
+//   }
+//   let bool_y = false;
+//   if (y < py + sy && y > py - sy) {
+//     bool_y = true;
+//   }
 
-  if (bool_x && bool_y) return true;
-  return false;
-}
+//   if (bool_x && bool_y) return true;
+//   return false;
+// }

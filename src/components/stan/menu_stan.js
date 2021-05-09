@@ -1,5 +1,5 @@
-import React from 'react'
-import { MenuLink } from '../menu_link'
+import React from 'react';
+import { MenuLink } from '../menu_link';
 
 export function MenuStan() {
   return (
@@ -11,16 +11,20 @@ export function MenuStan() {
         }
       ></MenuLink>
     </div>
-  )
+  );
 }
 
 export function MenuECV() {
   return (
     <div>
       <MenuLink
-        link="/stan/ecv/ecv_aix_2020_2021"
-        name={'Atelier ECV-Digital Aix-en-Provence 2020-2021'}
+        link="/stan/ecv/ecv_aix_2021_1"
+        name={'Atelier ECV-Digital Aix-en-Provence 2021 partie 1'}
+      ></MenuLink>
+      <MenuLink
+        link="/stan/ecv/ecv_aix_2021_2"
+        name={'Atelier ECV-Digital Aix-en-Provence 2021 partie 2'}
       ></MenuLink>
     </div>
-  )
+  );
 }
