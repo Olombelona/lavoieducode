@@ -1,0 +1,34 @@
+.menu {
+  margin: 0 auto;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* align-self: center; */
+  /* position: absolute; */
+  /* justify-content: space-between; */
+  align-content: space-between;
+}
+
+.button {
+  /* position: absolute; */
+  position: relative;
+
+  text-align: center;
+  /* vertical-align: middle; */
+
+  /* margin: auto; */
+  /* margin: auto;
+  text-align: center; */
+  /* background: yellow; */
+}
+
+.sketch {
+  position: absolute;
+}
+
+.label {
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* position: absolute; */
+  /* margin: -2.5em; */
+  color: red;
+}
