@@ -3,7 +3,7 @@ import React from 'react';
 import P5Wrapper from '../../WrapperP5';
 
 export function Background() {
-  return <P5Wrapper sketch={sketch} />;
+  return <P5Wrapper sketch={sketch}></P5Wrapper>;
 }
 
 function sketch(p) {
