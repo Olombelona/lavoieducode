@@ -1,5 +1,6 @@
 import React from 'react';
-import P5Wrapper from 'react-p5-wrapper';
+
+import P5Wrapper from '../../../components/p5wrapper';
 import Layout from '../../../components/layout';
 import '../../../styles/stan/ecv/ecv_20_21.css';
 
@@ -10,23 +11,6 @@ function Button(props) {
         <P5Wrapper sketch={sketch} />
       </div>
       <div className="label">{props.label}</div>
-    </div>
-  );
-}
-
-export default function () {
-  return (
-    <div>
-      <div>
-        {/* <Layout title="ECV Aix-en-Provence 2020-2021" to="/stan/home"></Layout> */}
-        <Layout title="ECV Aix-en-Provence 2021 partie 2" to="/back"></Layout>
-      </div>
-      <div>
-        <div className="menu">
-          <Button label="CSS de Merde" />
-          <Button label="CSS la daube" />
-        </div>
-      </div>
     </div>
   );
 }
@@ -44,4 +28,21 @@ function sketch(p) {
   p.mouseReleased = function () {};
 
   p.mousePressed = function () {};
+}
+
+export default function () {
+  return (
+    <div>
+      <div>
+        {/* <Layout title="ECV Aix-en-Provence 2020-2021" to="/stan/home"></Layout> */}
+        <Layout title="ECV Aix-en-Provence 2021 partie 2" to="/back"></Layout>
+      </div>
+      <div>
+        <div className="menu">
+          <Button label="CSS de Merde" />
+          <Button label="CSS la daube" />
+        </div>
+      </div>
+    </div>
+  );
 }

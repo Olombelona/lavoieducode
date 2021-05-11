@@ -1,5 +1,6 @@
 import React from 'react';
-import P5Wrapper from 'react-p5-wrapper';
+
+import P5Wrapper from '../../../components/p5wrapper';
 import Layout from '../../../components/layout';
 import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
 
@@ -26,7 +27,6 @@ function sketch(p) {
   let rounded;
   let inside;
   let label;
-
   p.setup = function () {
     p.createCanvas(p.windowWidth, p.windowHeight);
     p.colorMode(p.HSB, 1, 1, 1, 1);
@@ -35,7 +35,7 @@ function sketch(p) {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
     init_button();
-    console.log('pos', pos);
+    // console.log('pos', pos);
   };
 
   p.draw = function () {
