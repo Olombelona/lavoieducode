@@ -6,7 +6,8 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         rules: [
           {
             test: /p5/,
-            use: loaders.null(),
+            // use: loaders.null(),
+            use: 'null-loader',
           },
         ],
       },

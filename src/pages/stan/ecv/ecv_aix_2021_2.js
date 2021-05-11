@@ -1,6 +1,6 @@
 import React from 'react';
 
-import P5Wrapper from '../../../components/p5wrapper';
+import P5Wrapper from '../../../components/P5wrapper';
 import Layout from '../../../components/layout';
 import '../../../styles/stan/ecv/ecv_20_21.css';
 

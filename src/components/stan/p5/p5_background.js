@@ -1,6 +1,6 @@
 import React from 'react';
 
-import P5Wrapper from '../../p5wrapper';
+import P5Wrapper from '../../P5wrapper';
 
 export function Background() {
   return <P5Wrapper sketch={sketch} />;
