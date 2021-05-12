@@ -73,8 +73,8 @@ function sketch(p) {
       size.y = size_ref.y + val_y;
       pos.x = pos_ref.x - val_x / 2;
       pos.y = pos_ref.y - val_y / 2;
-      console.log('frameCount', p.frameCount);
-      console.log(size.y, '=', size_ref.x, '+', val_x, '*', ratio_x);
+      // console.log('frameCount', p.frameCount);
+      // console.log(size.y, '=', size_ref.x, '+', val_x, '*', ratio_x);
     }
   }
 
@@ -124,43 +124,3 @@ function sketch(p) {
     p.rect(px, py, sx, sy, rounded);
   }
 }
-
-// function inside_ellipse(cursor, pos, size) {
-//   let x = cursor.x;
-//   let y = cursor.y;
-//   let px = pos.x;
-//   let py = pos.y;
-//   let sx = size.x;
-//   let sy = size.y;
-//   let bool_x = false;
-//   if (x < px + sx / 2 && x > px - sx / 2) {
-//     bool_x = true;
-//   }
-//   let bool_y = false;
-//   if (y < py + sy / 2 && y > py - sy / 2) {
-//     bool_y = true;
-//   }
-
-//   if (bool_x && bool_y) return true;
-//   return false;
-// }
-
-// function inside_rect(cursor, pos, size) {
-//   let x = cursor.x;
-//   let y = cursor.y;
-//   let px = pos.x;
-//   let py = pos.y;
-//   let sx = size.x;
-//   let sy = size.y;
-//   let bool_x = false;
-//   if (x < px + sx && x > px) {
-//     bool_x = true;
-//   }
-//   let bool_y = false;
-//   if (y < py + sy && y > py - sy) {
-//     bool_y = true;
-//   }
-
-//   if (bool_x && bool_y) return true;
-//   return false;
-// }

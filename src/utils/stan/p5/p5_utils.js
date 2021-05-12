@@ -30,7 +30,7 @@ export const inside_rect = function (cursor, pos, size) {
     bool_x = true;
   }
   let bool_y = false;
-  if (y < py + sy && y > py - sy) {
+  if (y < py + sy && y > py) {
     bool_y = true;
   }
 

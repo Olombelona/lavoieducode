@@ -1,24 +1,36 @@
 .menu {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
-  /* flex-wrap: wrap; */
-  /* align-self: center; */
-  /* position: absolute; */
-  /* justify-content: space-between; */
-  align-content: space-between;
 }
 
 .button {
+  margin: 0 auto;
   /* position: absolute; */
+  /* margin-right: 4em; */
+  /* position: relative; */
+  /* margin-right: 4em; */
+}
+
+.sketch {
+  position: absolute;
+
+  /* position: absolute; */
+}
+
+.label {
   position: relative;
 
-  text-align: center;
-  /* vertical-align: middle; */
+  /* position: relative; */
+  color: red;
+}
 
-  /* margin: auto; */
-  /* margin: auto;
-  text-align: center; */
-  /* background: yellow; */
+/* .menu {
+  margin: 0 auto;
+  display: flex;
+}
+
+.button {
+  position: relative;
 }
 
 .sketch {
@@ -26,9 +38,6 @@
 }
 
 .label {
-  /* position: absolute; */
-  /* z-index: 1; */
-  /* position: absolute; */
-  /* margin: -2.5em; */
+  position: relative;
   color: red;
-}
+} */

@@ -3,31 +3,53 @@ import React from 'react';
 import P5Wrapper from '../../../components/WrapperP5';
 import Layout from '../../../components/layout';
 import '../../../styles/stan/ecv/ecv_20_21.css';
+import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
 
 function Button(props) {
   return (
     <div className="button">
       <div className="sketch">
-        <P5Wrapper sketch={sketch} />
+        <P5Wrapper sketch={sketch} data={props.label} />
       </div>
-      <div className="label">{props.label}</div>
     </div>
   );
 }
 
 function sketch(p) {
+  let data;
+  let pos = p.createVector(0, 0);
+  let size = p.createVector(0, 0);
+  let rounded = 0;
+  let inside_is = false;
   p.setup = function () {
     p.createCanvas(150, 100);
-    p.stroke(255);
-    p.fill(0);
-    p.rect(0, 0, p.width, p.height, p.height / 2);
+
+    size.set(p.width / 2, p.height / 2);
+    pos.set(size.x / 2, size.y / 2);
+    rounded = p.height / 3;
   };
 
-  p.draw = function () {};
+  p.draw = function () {
+    let cursor = p.createVector(p.mouseX, p.mouseY);
+    p.noStroke();
+    inside_is = inside_rect(cursor, pos, size);
+    // console.log('inside is', inside_is);
+    if (inside_is) {
+      p.fill(255, 0, 0);
+    } else {
+      p.fill(255, 255, 0);
+    }
+    p.rect(pos.x, pos.y, size.x, size.y, rounded);
+    p.fill(0);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.text(data, p.width / 2, p.height / 2);
+  };
 
-  p.mouseReleased = function () {};
-
-  p.mousePressed = function () {};
+  p.data = function (props) {
+    if (props.data) {
+      data = props.data;
+    }
+  };
 }
 
 export default function () {
@@ -39,8 +61,9 @@ export default function () {
       </div>
       <div>
         <div className="menu">
-          <Button label="CSS de Merde" />
-          <Button label="CSS la daube" />
+          <Button label="ROUGE" />
+          <Button label="VERT" />
+          <Button label="BLEU" />
         </div>
       </div>
     </div>
