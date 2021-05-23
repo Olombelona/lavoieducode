@@ -1,25 +1,35 @@
 import React from 'react';
 
-import P5Wrapper from '../../../components/WrapperP5';
 import Layout from '../../../components/layout';
 import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
+
+import P5Wrapper from '../../../components/p5_wrapper';
+import P5Manager from '../../../components/p5_manager';
+const ECV_A = P5Wrapper('Simple');
 
 export default function () {
   return (
     <div>
-      <div style={{ position: 'absolute' }}>
-        <P5Wrapper sketch={sketch} />
+      <div>
+        <Layout title="ECV Aix-en-Provence 2021 partie 1" to="/back"></Layout>;
       </div>
-      <div style={{ position: 'absolute' }}>
-        {/* <Layout title="ECV Aix-en-Provence 2020-2021" to="/stan/home"></Layout> */}
-        <Layout title="ECV Aix-en-Provence 2021 partie 1" to="/back"></Layout>
+      <div>
+        <P5Manager>
+          <CompECV_A id={0} comp={ECV_A} />
+        </P5Manager>
       </div>
     </div>
   );
 }
 
-function sketch(p) {
-  // createButton() // look if it's cool or not
+function CompECV_A(props) {
+  return (
+    <props.comp sketch={my_sketch} id={props.id}></props.comp>
+    // <props.comp sketch={my_sketch} id={props.id} data={state_data}></props.comp>
+  );
+}
+
+function my_sketch(p) {
   let pos;
   let pos_ref;
   let size;

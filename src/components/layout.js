@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, navigate } from 'gatsby'
+import React from 'react';
+import { Link, navigate } from 'gatsby';
 
-import Header from '../components/header'
-import '../styles/layout.css'
+import Header from '../components/header';
+import '../styles/layout.css';
 
 function Home(props, { children }) {
   return (
@@ -13,7 +13,7 @@ function Home(props, { children }) {
       {/* <footer></footer> */}
       <main>{children}</main>
     </div>
-  )
+  );
 }
 
 function Back(props, { children }) {
@@ -27,12 +27,12 @@ function Back(props, { children }) {
       {/* <footer></footer> */}
       <main>{children}</main>
     </div>
-  )
+  );
 }
 
 function Goto(props, { children }) {
-  let arr = props.to.split('/')
-  let len = arr.length
+  let arr = props.to.split('/');
+  let len = arr.length;
   return (
     <div>
       <Link to={props.to}>{arr[len - 1]}</Link>
@@ -41,7 +41,7 @@ function Goto(props, { children }) {
       {/* <footer></footer> */}
       <main>{children}</main>
     </div>
-  )
+  );
 }
 
 const Layout = (props, { children }) => {
@@ -51,16 +51,16 @@ const Layout = (props, { children }) => {
         <Header str={props.title} />
         <main>{children}</main>
       </div>
-    )
+    );
   } else {
     if (props.to === '/back' || props.to === '/previous') {
-      return <Back data={props}>{children}</Back>
+      return <Back data={props}>{children}</Back>;
     } else if (typeof props.to !== 'undefined') {
-      return <Goto data={props}>{children}</Goto>
+      return <Goto data={props}>{children}</Goto>;
     } else {
-      return <Home data={props}>{children}</Home>
+      return <Home data={props}>{children}</Home>;
     }
   }
-}
+};
 
-export default Layout
+export default Layout;

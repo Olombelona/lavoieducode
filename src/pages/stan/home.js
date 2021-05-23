@@ -6,10 +6,12 @@ import { MenuECV } from '../../components/stan/menu_stan';
 import { ContainerTest } from '../../components/stan/container';
 // Processing
 import sketch from '../../sketches/background';
-import P5Wrapper from '../../components/WrapperP5';
+import P5Wrapper from '../../components/p5_wrapper';
+
+const Background_Home = P5Wrapper('background home');
 
 function Background() {
-  return <P5Wrapper sketch={sketch}></P5Wrapper>;
+  return <Background_Home sketch={sketch}></Background_Home>;
 }
 
 export default function Home() {
