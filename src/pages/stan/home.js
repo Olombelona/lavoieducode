@@ -2,7 +2,7 @@ import React from 'react';
 
 // site
 import Layout from '../../components/layout';
-import { MenuECV } from '../../components/stan/menu_stan';
+import { MenuECV, MenuCulture } from '../../components/stan/menu_stan';
 import { ContainerTest } from '../../components/stan/container';
 // Processing
 import sketch from '../../sketches/background';
@@ -22,6 +22,7 @@ export default function Home() {
       </ContainerTest>
       <ContainerTest>
         <Layout title="La caravane du code créatif"></Layout>
+        <MenuCulture />
         <MenuECV />
       </ContainerTest>
     </div>

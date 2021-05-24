@@ -28,3 +28,16 @@ export function MenuECV() {
     </div>
   );
 }
+
+export function MenuCulture() {
+  return (
+    <div>
+      <MenuLink
+        link="/stan/culture/artistes"
+        name={
+          "En avant les artistes, s'ils vous plaient faite du bruit en silence"
+        }
+      ></MenuLink>
+    </div>
+  );
+}

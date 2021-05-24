@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+// https://medium.com/codait/environment-variables-or-keeping-your-secrets-secret-in-a-node-js-app-99019dfff716
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `La Voie du code`,
@@ -17,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-mongodb`,
       options: {
         dbName: 'Stan',
-        collection: 'Artwork',
+        collection: 'GenerativeArtists',
         server: {
           address: 'cluster0-shard-00-01.nu5bx.mongodb.net',
           port: 27017,
@@ -47,6 +50,15 @@ module.exports = {
         stripMetadata: true,
         defaultQuality: 50,
         failOnError: true,
+      },
+    },
+    // FILE SYSTEME
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `artistes`,
+        path: `${__dirname}/media/artistes`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
     //
