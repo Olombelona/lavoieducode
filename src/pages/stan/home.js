@@ -6,7 +6,7 @@ import { MenuECV } from '../../components/stan/menu_stan';
 import { ContainerTest } from '../../components/stan/container';
 // Processing
 import sketch from '../../sketches/background';
-import P5Wrapper from '../../components/p5_wrapper';
+import P5Wrapper from '../../components/P5Wrapper';
 
 const Background_Home = P5Wrapper('background home');
 

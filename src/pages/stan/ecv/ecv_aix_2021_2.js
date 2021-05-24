@@ -6,14 +6,15 @@ import '../../../styles/stan/ecv/ecv_20_21.css';
 import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
 
 // Processing part
-import P5Wrapper from '../../../components/p5_wrapper';
-import P5Manager from '../../../components/p5_manager';
+import P5Wrapper from '../../../components/P5Wrapper';
+import P5Manager from '../../../components/P5Manager';
 const Background_ECV = P5Wrapper('background ecv');
 
 const Bouton_A = P5Wrapper('bouton a');
 const Bouton_B = P5Wrapper('bouton b');
 const Bouton_C = P5Wrapper('bouton c');
 
+// export default function ECV_2021_2() {
 export default function () {
   return (
     <div>
@@ -33,25 +34,6 @@ export default function () {
       </div>
     </div>
   );
-  // return (
-  //   <div>
-  //     <div style={{ position: 'absolute' }}>
-  //       <P5Wrapper sketch={background_p5} />
-  //     </div>
-  //     <div style={{ position: 'absolute' }}>
-  //       {/* <Layout title="ECV Aix-en-Provence 2020-2021" to="/stan/home"></Layout> */}
-  //       <Layout title="ECV Aix-en-Provence 2021 partie 2" to="/back"></Layout>
-  //     </div>
-  //     <div>
-  //       {/* <div style={{ marginTop: '3em' }}> */}
-  //       <div className="menu">
-  //         <Button label="ROUGE" />
-  //         <Button label="VERT" />
-  //         <Button label="BLEU" />
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 }
 
 function Background() {
@@ -62,10 +44,9 @@ function CompButton(props) {
   let buf_data = {
     title: props.label,
   };
-  const [state_data, set_data] = useState(buf_data);
   return (
     <div>
-      <props.comp sketch={button_p5} data={state_data}></props.comp>
+      <props.comp sketch={button_p5}></props.comp>
     </div>
   );
 }

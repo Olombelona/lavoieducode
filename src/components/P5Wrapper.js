@@ -1,6 +1,6 @@
 /**
  * Gatsby-React P5 Wrapper
- * v 0.0.1
+ * v 0.0.2
  * 2021-2021
  *
  * Inspired
@@ -19,11 +19,17 @@ import { memo } from 'react';
 // import { createContext, useContext } from "react";
 import PropTypes from 'prop-types';
 import p5 from 'p5';
-import P5Manager from './p5_manager';
+import P5Manager from './P5Manager';
 
-import P5DispatchContext from './p5_wrapper';
-import P5StateContext from './p5_manager';
+import P5DispatchContext from './P5Wrapper';
+import P5StateContext from './P5Manager';
 
+// function generate() {
+//   return -1;
+// }
+// import { generate } from 'shortid';
+// export default function (id = generate()) {
+// export default function (id) {
 export default function (id = 'abc...xyz') {
   let env = null;
 
@@ -54,7 +60,8 @@ export default function (id = 'abc...xyz') {
     sketch: () => {},
   };
 
-  return memo(P5Wrapper, (_, nextProps) => {
+  return memo(P5Wrapper, nextProps => {
+    // return memo(P5Wrapper, (_, nextProps) => {
     if (env) {
       env.data = { ...nextProps.data };
       return true;

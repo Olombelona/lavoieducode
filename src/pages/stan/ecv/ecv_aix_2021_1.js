@@ -3,11 +3,20 @@ import React from 'react';
 import Layout from '../../../components/layout';
 import { inside_rect } from '../../../utils/stan/p5/p5_utils.js';
 
-import P5Wrapper from '../../../components/p5_wrapper';
-import P5Manager from '../../../components/p5_manager';
-const ECV_A = P5Wrapper('Simple');
+import P5Wrapper from '../../../components/P5Wrapper';
+import P5Manager from '../../../components/P5Manager';
+// const ECV_1 = P5Wrapper('Simple');
+// const ECV_1 = P5Wrapper();
+
+// import { generate } from 'shortid';
+// function generate() {
+//   return -1;
+// }
+// const ECV_1 = P5Wrapper(generate());
+const ECV_1 = P5Wrapper('truc');
 
 export default function () {
+  // export default function ECV_2021_1() {
   return (
     <div>
       <div>
@@ -15,7 +24,7 @@ export default function () {
       </div>
       <div>
         <P5Manager>
-          <CompECV_A id={0} comp={ECV_A} />
+          <CompECV_A id={0} comp={ECV_1} />
         </P5Manager>
       </div>
     </div>

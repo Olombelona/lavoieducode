@@ -1,6 +1,6 @@
 /**
  * Gatsby-React P5 Manager
- * v 0.0.1
+ * v 0.0.2
  * 2021-2021
  *
  *  Inspired from
@@ -16,6 +16,14 @@ import PropTypes from 'prop-types';
 import { createContext, useContext } from 'react';
 import { useReducer } from 'react';
 import { useState } from 'react';
+
+const init_state = {
+  x: 0,
+  y: 0,
+  z: 0,
+  data: {},
+  sketch: null,
+};
 
 export const P5DispatchContext = createContext(() => {});
 export const P5StateContext = createContext(init_state);
@@ -33,14 +41,6 @@ export default function P5Manager({ children }) {
 
 P5Manager.propTypes = {
   children: PropTypes.any.isRequired,
-};
-
-const init_state = {
-  x: 0,
-  y: 0,
-  z: 0,
-  data: {},
-  sketch: null,
 };
 
 function reducer(state, action) {
