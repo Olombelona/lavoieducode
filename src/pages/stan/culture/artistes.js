@@ -26,8 +26,6 @@ export default function (props) {
 }
 
 const Show = ({ children, ...props }) => {
-  console.log('titre', props.title);
-  console.log('file name', props.file_name);
   if (children.node.relativePath.includes(props.file_name)) {
     return (
       <div>
