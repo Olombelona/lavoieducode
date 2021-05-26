@@ -34,9 +34,7 @@ export function MenuCulture() {
     <div>
       <MenuLink
         link="/stan/culture/artistes"
-        name={
-          "En avant les artistes, s'ils vous plaient faite du bruit en silence"
-        }
+        name={"Hey les artistes, s'ils vous plaient faite du bruit en silence"}
       ></MenuLink>
     </div>
   );
