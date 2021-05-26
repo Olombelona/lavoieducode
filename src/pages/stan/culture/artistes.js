@@ -10,7 +10,10 @@ export default function (props) {
   return (
     <div>
       <div>
-        <Layout title="En avant les artistes" to="/back"></Layout>
+        <Layout
+          title="Liste non-exhaustive d'artistes génératif"
+          to="/back"
+        ></Layout>
       </div>
       <div>
         {art_info.map(art => (
